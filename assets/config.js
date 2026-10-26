@@ -9,6 +9,8 @@
    설정 전에는 사이트가 자동으로 '데모 모드'로 동작합니다.
 ============================================================ */
 window.APP_CONFIG = {
+  // 완성된 연구보고서 공개 시 true로 변경합니다. 기존 저장 파일은 유지합니다.
+  REPORTS_READY: false,
   GITHUB_OWNER:  "phdkim0244-droid",   // 본인 GitHub 아이디
   GITHUB_REPO:   "gangjin-research-hub",   // 저장소 이름
   GITHUB_BRANCH: "main",
@@ -19,3 +21,4 @@ window.APP_CONFIG = {
     form:   "files/forms",    // 각종 서식
   },
 };
+
