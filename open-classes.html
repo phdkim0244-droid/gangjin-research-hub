@@ -49,8 +49,12 @@ const rows=[
 [6,6,'국어','4. 소중한 우리말','8/10','우리말을 바르게 사용하는 태도 갖기',4,4,3,0,2,1]
 ];
 // 수업 네비게이터의 참관자용 공유 링크를 학년-반 키에 입력하면 버튼이 활성화됩니다.
-// 빈 문자열은 수업안 준비 중 상태를 유지합니다.
-const lessonPlanLinks = Object.fromEntries(rows.map(r=>[`${r[0]}-${r[1]}`, '']));
+// 네비게이터 '콘텐츠 관리 → 공개수업 → 허브용 링크 목록 복사' 결과를 아래 목록에 그대로 붙여 넣습니다.
+// 목록에 없는 학급은 수업안 준비 중 상태를 유지합니다.
+const publishedPlanLinks = {
+  '5-5': 'https://htht.ydssam.kr/v/g6h7ujwnz35acmtrm43frwxe',
+};
+const lessonPlanLinks = Object.fromEntries(rows.map(r=>[`${r[0]}-${r[1]}`, publishedPlanLinks[`${r[0]}-${r[1]}`] ?? '']));
 function safePlanUrl(value){
   try { const url=new URL(value);return url.protocol==='https:'&&!url.username&&!url.password?url.href:null; } catch { return null; }
 }
