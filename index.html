@@ -202,6 +202,19 @@
   }
   @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 
+
+  /* 네비게이터 강조 카드 */
+  .qn-grid { grid-template-columns: 1.35fr repeat(3,minmax(0,1fr)); }
+  .navigator-feature { background: var(--teal-700); border-color: var(--teal-700); padding-top: 20px; padding-bottom: 20px; }
+  .navigator-feature:hover { background: var(--teal-900); border-color: var(--teal-900); }
+  .navigator-feature .qn-ic { width: 76px; height: 76px; font-size: 2.7rem; background: white; border-radius: 20px; }
+  .navigator-feature .qn-label { color: white; font-size: 1.12rem; word-break: keep-all; }
+  .navigator-feature .qn-sub { color: #e1f3f2; font-weight: 600; }
+  @media(max-width:860px) {
+    .qn-grid { grid-template-columns: 1fr 1fr; }
+    .navigator-feature { grid-column: 1 / -1; grid-template-columns: 76px minmax(0,1fr); padding: 20px; }
+  }
+  @media(max-width:540px) { .qn-grid { grid-template-columns: 1fr; } }
 </style>
 
 <div id="demoBanner">ℹ️ 데모 미리보기 — GitHub 저장소가 아직 설정되지 않았습니다. 자료 목록은 예시입니다. (assets/config.js 의 GITHUB_OWNER 설정 후 실제 파일이 표시됩니다)</div>
@@ -213,7 +226,6 @@
     <nav class="nav-links" aria-label="주 메뉴">
       <a href="#overview" data-goto="overview">운영 개요</a>
       <a href="#library">연구학교 자료실</a>
-      <a href="https://htht-navigator.vercel.app" target="_blank" rel="noopener">HTHT 네비게이터 ↗<span class="sr-only"> (새 창)</span></a>
     </nav>
     <a class="btn btn-register" href="https://forms.cloud.microsoft/r/MM150K4ujY" target="_blank" rel="noopener noreferrer">연구학교 참관 신청 <span aria-hidden="true">↗</span><span class="sr-only"> (새 창)</span></a>
   </div>
@@ -237,8 +249,9 @@
 <!-- 참관 안내 바로가기 -->
 <section class="quicknav" aria-labelledby="visitor-links-title">
   <div class="wrap">
-    <div class="visitor-heading"><h2 id="visitor-links-title">연구학교 수업 나눔의 날</h2><p>2026. 11. 12.(목) · 참관 안내</p></div>
-    <nav class="qn-grid" aria-label="참관 안내">
+    <div class="visitor-heading"><h2 id="visitor-links-title">연구학교 바로가기</h2><p>2026. 11. 12.(목) · 참관 안내</p></div>
+    <nav class="qn-grid" aria-label="주요 서비스 및 참관 안내">
+      <a class="qn-tile navigator-feature" href="https://gjj-htht.kr/" target="_blank" rel="noopener noreferrer"><div class="qn-ic" aria-hidden="true">🧭</div><div class="qn-label">HTHT 수업 네비게이터</div><div class="qn-sub">수업 설계 · 수업자료 살펴보기 ↗<span class="sr-only"> (새 창)</span></div></a>
       <a class="qn-tile" href="open-classes.html"><div class="qn-ic" aria-hidden="true">📚</div><div class="qn-label">공개수업 안내</div><div class="qn-sub">학년별 28개 수업 살펴보기</div></a>
       <a class="qn-tile" href="#event-schedule"><div class="qn-ic" aria-hidden="true">📅</div><div class="qn-label">당일 일정</div><div class="qn-sub">등록 · 공개수업 · 운영 결과 발표</div></a>
       <a class="qn-tile" href="campus-guide.html"><div class="qn-ic" aria-hidden="true">🅿️</div><div class="qn-label">주차 및 학교 공간 안내</div><div class="qn-sub">주차 · 층별 배치도 · 체험존</div></a>
@@ -328,12 +341,12 @@
     <!-- 수업자료(외부 링크) -->
     <div class="panel" id="lessons">
       <div class="grid g2">
-        <a class="link-card" href="https://htht-navigator.vercel.app" target="_blank" rel="noopener">
+        <a class="link-card" href="https://gjj-htht.kr" target="_blank" rel="noopener">
           <div class="lic">🧭</div>
           <div><h4>HTHT 수업 네비게이터</h4><p>학년·교과·에듀테크 조건에 맞는 HTHT 수업 전략을 큐레이션 받는 플랫폼</p></div>
           <span class="arrow">↗</span>
         </a>
-        <a class="link-card" href="https://htht-navigator.vercel.app/strategies" target="_blank" rel="noopener">
+        <a class="link-card" href="https://gjj-htht.kr/strategies" target="_blank" rel="noopener">
           <div class="lic">📚</div>
           <div><h4>수업자료실 (수업 전략)</h4><p>현장에서 바로 활용할 수 있는 하이터치-하이테크 수업 전략 모음</p></div>
           <span class="arrow">↗</span>
