@@ -52,7 +52,22 @@ const rows=[
 // 네비게이터 '콘텐츠 관리 → 공개수업 → 허브용 링크 목록 복사' 결과를 아래 목록에 그대로 붙여 넣습니다.
 // 목록에 없는 학급은 수업안 준비 중 상태를 유지합니다.
 const publishedPlanLinks = {
+  '1-1': 'https://htht.ydssam.kr/v/yfjzph2n3iwifjw7rbcm9bws',
+  '1-2': 'https://htht.ydssam.kr/v/rvvtv7623jeaw8tk9hzdrurn',
+  '1-4': 'https://htht.ydssam.kr/v/z4g36ss6dr9ynkw4hn7gma56',
+  '1-5': 'https://htht.ydssam.kr/v/8t5tdqdi9vtv6fkiurhg3jfv',
+  '2-1': 'https://htht.ydssam.kr/v/e3n8sgb8jite6ne9bm5fe3jc',
+  '2-4': 'https://htht.ydssam.kr/v/8kimukdji5yustgqw88mp68h',
+  '3-1': 'https://htht.ydssam.kr/v/ugc9mmc76xg2rdcffmze3n7h',
+  '3-3': 'https://htht.ydssam.kr/v/mbwhy4q9vjmk69synequvd4q',
+  '4-2': 'https://htht.ydssam.kr/v/2pd8x7bqjig56wi88icjg67r',
+  '4-4': 'https://htht.ydssam.kr/v/fzti6rzs3uz3w6dv2s9naais',
+  '5-1': 'https://htht.ydssam.kr/v/76qhwgb8hg9fh4issyixqq99',
+  '5-2': 'https://htht.ydssam.kr/v/g9c2y9i4zqm9f2s9zeb87m9t',
+  '5-3': 'https://htht.ydssam.kr/v/a7zddtuwrhv4mdwuqawtccva',
   '5-5': 'https://htht.ydssam.kr/v/g6h7ujwnz35acmtrm43frwxe',
+  '5-6': 'https://htht.ydssam.kr/v/m4u48shf5jtg2nkmd37cwdhe',
+  '6-2': 'https://htht.ydssam.kr/v/4imk8usdnm2zqgp5skacaqq9',
 };
 const lessonPlanLinks = Object.fromEntries(rows.map(r=>[`${r[0]}-${r[1]}`, publishedPlanLinks[`${r[0]}-${r[1]}`] ?? '']));
 function safePlanUrl(value){
