@@ -145,6 +145,9 @@
   .link-card h4 { color: var(--teal-900); font-size: 1.08rem; margin-bottom: 4px; }
   .link-card p { color: var(--muted); font-size: .88rem; }
   .link-card .arrow { margin-left: auto; color: var(--teal-500); font-size: 1.3rem; }
+  .panel-note { color: var(--muted); font-size: .88rem; margin-top: 14px; text-align: center; }
+  .panel-note a { color: var(--teal-700); text-decoration: underline; }
+  .panel-sub { font-size: 1.08rem; color: var(--teal-900); margin: 34px 0 12px; padding-top: 24px; border-top: 1px solid var(--line); }
 
   .help-hint { text-align: center; margin-top: 18px; }
   .help-hint button { background: none; border: none; color: var(--teal-700); font-family: inherit; font-size: .88rem; font-weight: 700; cursor: pointer; text-decoration: underline; }
@@ -343,14 +346,13 @@
     <div class="sec-head">
       <div class="kicker">Resource Library</div>
       <h2>연구학교 자료실</h2>
-      <p>연구보고서와 학년별 수업사례 포스터를 확인하고 내려받을 수 있습니다.</p>
+      <p>연구보고서, 학년별 수업사례 포스터, 연구학교 성과물(수업 네비게이터·수업자료실·매뉴얼·서식)을 확인하고 내려받을 수 있습니다.</p>
     </div>
 
     <div class="tabs">
       <button class="tab active" data-tab="reports">📑 연구보고서</button>
       <button class="tab" data-tab="posters">🖼️ 수업사례 포스터</button>
-      <button class="tab" data-tab="lessons">📚 수업자료</button>
-      <button class="tab" data-tab="forms">📝 각종 서식</button>
+      <button class="tab" data-tab="outputs">🧭 연구학교 성과물</button>
     </div>
 
     <!-- 연구보고서 -->
@@ -391,9 +393,9 @@
       </div>
     </div>
 
-    <!-- 수업자료(외부 링크) -->
-    <div class="panel" id="lessons">
-      <div class="grid g2">
+    <!-- 연구학교 성과물: 네비게이터·수업자료실·매뉴얼(외부 링크/파일) + 각종 서식(files/forms) -->
+    <div class="panel" id="outputs">
+      <div class="grid g3">
         <a class="link-card" href="https://gjj-htht.kr" target="_blank" rel="noopener">
           <div class="lic">🧭</div>
           <div><h4>HTHT 수업 네비게이터</h4><p>학년·교과·에듀테크 조건에 맞는 HTHT 수업 전략을 큐레이션 받는 플랫폼</p></div>
@@ -404,11 +406,14 @@
           <div><h4>수업자료실 (수업 전략)</h4><p>현장에서 바로 활용할 수 있는 하이터치-하이테크 수업 전략 모음</p></div>
           <span class="arrow">↗</span>
         </a>
+        <a class="link-card" href="files/manual/htht-navigator-teacher-manual.pdf" target="_blank" rel="noopener">
+          <div class="lic">📘</div>
+          <div><h4>수업 네비게이터 매뉴얼</h4><p>교사용 사용 매뉴얼 · PDF · 43쪽 · 8.7 MB</p></div>
+          <span class="arrow">↗</span>
+        </a>
       </div>
-    </div>
-
-    <!-- 각종 서식 -->
-    <div class="panel" id="forms">
+      <p class="panel-note">매뉴얼 최신판은 수업 네비게이터의 <a href="https://gjj-htht.kr/manual" target="_blank" rel="noopener">안내 → 사용 매뉴얼</a>에서도 볼 수 있습니다.</p>
+      <h3 class="panel-sub">📝 각종 서식</h3>
       <div class="file-list" id="formList"><div class="loading">자료를 불러오는 중…</div></div>
       <div class="help-hint"><button onclick="openModal('helpOverlay')">＋ 자료를 추가하려면?</button></div>
     </div>
@@ -429,10 +434,10 @@
     <button class="close" onclick="closeModal('helpOverlay')">×</button>
     <h3>📎 자료 추가하는 방법</h3>
     <ol class="steps">
-      <li><b>GitHub 저장소</b>에 로그인 후, 자료를 넣을 폴더로 이동합니다.<br />연구보고서 → <code>files/reports</code>, 각종 서식 → <code>files/forms</code></li>
+      <li><b>GitHub 저장소</b>에 로그인 후, 자료를 넣을 폴더로 이동합니다.<br />연구보고서 → <code>files/reports</code>, 각종 서식(연구학교 성과물 탭) → <code>files/forms</code>, 네비게이터 매뉴얼 → <code>files/manual</code></li>
       <li>오른쪽 위 <b>Add file → Upload files</b> 클릭</li>
       <li>파일을 드래그해 올리고 아래 <b>Commit changes</b> 클릭</li>
-      <li>각종 서식은 업로드 후 이 사이트를 새로고침하면 <b>자동으로 목록에 표시</b>됩니다. 연구보고서는 <code>assets/config.js</code>의 <code>REPORT_FILES</code>에 등록합니다. 수업사례 포스터는 <code>files/posters</code>에 PDF를 올린 뒤 미리보기와 자료실 카드를 추가합니다. 파일 이름이 곧 제목이 되니 알아보기 쉽게 지어주세요.</li>
+      <li>각종 서식은 업로드 후 이 사이트를 새로고침하면 <b>자동으로 목록에 표시</b>됩니다. 연구보고서는 <code>assets/config.js</code>의 <code>REPORT_FILES</code>에 등록합니다. 네비게이터 매뉴얼은 <code>files/manual</code>의 PDF를 새 파일로 바꿔 올리면 됩니다. 수업사례 포스터는 <code>files/posters</code>에 PDF를 올린 뒤 미리보기와 자료실 카드를 추가합니다. 파일 이름이 곧 제목이 되니 알아보기 쉽게 지어주세요.</li>
     </ol>
     <div class="note">💡 별도 로그인·업로드 화면이 없는 이유: 서버 없이 GitHub에 파일을 두는 방식이라 <b>무료이면서 사이트가 절대 멈추지 않습니다.</b> 삭제·이름변경도 GitHub에서 같은 방법으로 합니다.</div>
   </div>
@@ -468,6 +473,7 @@ window.openModal = openModal; window.closeModal = closeModal;
 
 /* 탭 전환 */
 function activateTab(name) {
+  if (name === "lessons" || name === "forms") name = "outputs"; // 예전 탭 이름 호환
   document.querySelectorAll(".tab").forEach((x) => x.classList.toggle("active", x.dataset.tab === name));
   document.querySelectorAll(".panel").forEach((x) => x.classList.toggle("active", x.id === name));
 }
@@ -482,7 +488,7 @@ document.querySelectorAll("[data-goto]").forEach((a) => {
       document.getElementById("overview").scrollIntoView({ behavior: "smooth" });
       return;
     }
-    activateTab(g);                         // reports | lessons | forms
+    activateTab(g);                         // reports | posters | outputs
     document.getElementById("library").scrollIntoView({ behavior: "smooth" });
   });
 });
