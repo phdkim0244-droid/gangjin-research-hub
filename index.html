@@ -149,6 +149,26 @@
   .help-hint { text-align: center; margin-top: 18px; }
   .help-hint button { background: none; border: none; color: var(--teal-700); font-family: inherit; font-size: .88rem; font-weight: 700; cursor: pointer; text-decoration: underline; }
 
+  .resource-actions { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .resource-actions a { display:inline-block; padding:10px 14px; border-radius:9px; font-size:.85rem; font-weight:700; text-align:center; }
+  .resource-view { color:var(--teal-700); background:var(--teal-50); border:1px solid var(--teal-300); }
+  .resource-download { color:#fff; background:var(--teal-700); border:1px solid var(--teal-700); }
+  .resource-actions a:hover { box-shadow:var(--shadow); }
+  .poster-intro { text-align:center; color:var(--muted); margin-bottom:20px; font-size:.9rem; }
+  .poster-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+  .poster-card { display:flex; flex-direction:column; background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden; }
+  .poster-preview { display:block; padding:18px; background:#f6f9f9; border-bottom:1px solid var(--line); }
+  .poster-preview img { display:block; width:100%; height:280px; object-fit:contain; }
+  .poster-preview:hover { background:#e1eeee; }
+  .poster-body { display:flex; flex:1; flex-direction:column; padding:20px; }
+  .poster-grade { color:var(--teal-700); font-size:.85rem; font-weight:800; margin-bottom:8px; }
+  .poster-body h3 { color:var(--teal-900); font-size:1.05rem; line-height:1.5; word-break:keep-all; }
+  .poster-info { color:var(--muted); font-size:.82rem; margin:10px 0 16px; }
+  .poster-body .resource-actions { margin-top:auto; }
+  #library { scroll-margin-top:150px; }
+  @media(max-width:860px) { .poster-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  @media(max-width:540px) { .poster-grid { grid-template-columns:1fr; } .file { flex-wrap:wrap; padding:18px; } .file .resource-actions { width:100%; justify-content:flex-end; } #library { scroll-margin-top:230px; } }
+
   /* Modal */
   .overlay { position: fixed; inset: 0; background: rgba(7,59,62,.55); backdrop-filter: blur(3px); display: none; place-items: center; z-index: 100; padding: 20px; }
   .overlay.open { display: grid; }
@@ -204,7 +224,7 @@
 
 
   /* 네비게이터 강조 카드 */
-  .qn-grid { grid-template-columns: 1.35fr repeat(3,minmax(0,1fr)); }
+  .qn-grid { grid-template-columns: 1.35fr repeat(4,minmax(0,1fr)); }
   .navigator-feature { background: var(--teal-700); border-color: var(--teal-700); padding-top: 20px; padding-bottom: 20px; }
   .navigator-feature:hover { background: var(--teal-900); border-color: var(--teal-900); }
   .navigator-feature .qn-ic { width: 76px; height: 76px; font-size: 2.7rem; background: white; border-radius: 20px; }
@@ -225,7 +245,6 @@
     <div class="brand"><img class="school-mark" src="assets/school-mark.png" alt="강진중앙초등학교 교표" width="1080" height="1080"><span class="brand-text"><span>강진중앙초등학교</span> <span>AI・디지털 활용 연구학교</span></span></div>
     <nav class="nav-links" aria-label="주 메뉴">
       <a href="#overview" data-goto="overview">운영 개요</a>
-      <a href="#library">연구학교 자료실</a>
     </nav>
     <a class="btn btn-register" href="https://forms.cloud.microsoft/r/MM150K4ujY" target="_blank" rel="noopener noreferrer">연구학교 참관 신청 <span aria-hidden="true">↗</span><span class="sr-only"> (새 창)</span></a>
   </div>
@@ -255,6 +274,7 @@
       <a class="qn-tile" href="open-classes.html"><div class="qn-ic" aria-hidden="true">📚</div><div class="qn-label">공개수업 안내</div><div class="qn-sub">학년별 28개 수업 살펴보기</div></a>
       <a class="qn-tile" href="#event-schedule"><div class="qn-ic" aria-hidden="true">📅</div><div class="qn-label">당일 일정</div><div class="qn-sub">등록 · 공개수업 · 운영 결과 발표</div></a>
       <a class="qn-tile" href="campus-guide.html"><div class="qn-ic" aria-hidden="true">🅿️</div><div class="qn-label">주차 및 학교 공간 안내</div><div class="qn-sub">주차 · 층별 배치도 · 체험존</div></a>
+      <a class="qn-tile" href="#library" data-goto="reports"><div class="qn-ic" aria-hidden="true">📂</div><div class="qn-label">연구학교 자료실</div><div class="qn-sub">연구보고서 · 수업사례 포스터</div></a>
     </nav>
   </div>
 </section>
@@ -323,19 +343,52 @@
     <div class="sec-head">
       <div class="kicker">Resource Library</div>
       <h2>연구학교 자료실</h2>
-      <p>연구보고서, 수업자료, 각종 서식을 한 곳에서 확인하고 내려받을 수 있습니다.</p>
+      <p>연구보고서와 학년별 수업사례 포스터를 확인하고 내려받을 수 있습니다.</p>
     </div>
 
     <div class="tabs">
-      <button class="tab active" data-tab="reports">📑 연구보고서 · 준비중</button>
+      <button class="tab active" data-tab="reports">📑 연구보고서</button>
+      <button class="tab" data-tab="posters">🖼️ 수업사례 포스터</button>
       <button class="tab" data-tab="lessons">📚 수업자료</button>
       <button class="tab" data-tab="forms">📝 각종 서식</button>
     </div>
 
     <!-- 연구보고서 -->
     <div class="panel active" id="reports">
-      <div class="file-list" id="reportList"><div class="empty"><strong>연구보고서 · 준비중</strong><p>완성된 연구보고서는 추후 이곳에 안내합니다.</p></div></div>
+      <div class="file-list" id="reportList"><div class="file"><div class="fic">PDF</div><div class="meta"><h4>2026. 연구학교 결과보고서</h4><p>하이터치-하이테크(HTHT) 수업 네비게이터를 통한 학생 주도성 기르기</p><p>PDF · 63쪽 · 3.5 MB</p></div><div class="resource-actions"><a class="resource-view" href="files/reports/research-report-2026-11-02.pdf" target="_blank" rel="noopener">PDF 보기<span class="sr-only"> (새 창)</span> ↗</a><a class="resource-download" href="files/reports/research-report-2026-11-02.pdf" download>내려받기</a></div></div></div>
       <div class="help-hint"><button onclick="openModal('helpOverlay')">＋ 자료를 추가하려면?</button></div>
+    </div>
+
+    <!-- 학년별 수업사례 포스터 -->
+    <div class="panel" id="posters">
+      <p class="poster-intro">포스터를 누르면 PDF 원본을 새 창에서 크게 볼 수 있습니다.</p>
+      <div class="poster-grid">
+        <article class="poster-card">
+          <a class="poster-preview" href="files/posters/grade-1-bubble-art.pdf" target="_blank" rel="noopener" aria-label="1학년 · 즐거운 생활: 비눗방울이 그림이 된다면? PDF 크게 보기 (새 창)"><img src="assets/library/grade-1-bubble-art.jpg" alt="1학년 · 즐거운 생활 수업사례 포스터: 비눗방울이 그림이 된다면?" width="637" height="900" loading="lazy" /></a>
+          <div class="poster-body"><p class="poster-grade">1학년 · 즐거운 생활</p><h3>비눗방울이 그림이 된다면?</h3><p class="poster-info">A0 인쇄용 · PDF · 1.5 MB</p>
+          <div class="resource-actions"><a class="resource-view" href="files/posters/grade-1-bubble-art.pdf" target="_blank" rel="noopener">PDF 보기<span class="sr-only">: 비눗방울이 그림이 된다면? (새 창)</span> ↗</a><a class="resource-download" href="files/posters/grade-1-bubble-art.pdf" download="1학년_비눗방울그림_수업특성추가_A0_인쇄용.pdf">내려받기<span class="sr-only">: 비눗방울이 그림이 된다면?</span></a></div></div>
+        </article>
+        <article class="poster-card">
+          <a class="poster-preview" href="files/posters/grade-3-ai-self.pdf" target="_blank" rel="noopener" aria-label="3학년 · 도덕: 나를 닮은 AI, 진짜 내가 될 수 있을까? PDF 크게 보기 (새 창)"><img src="assets/library/grade-3-ai-self.jpg" alt="3학년 · 도덕 수업사례 포스터: 나를 닮은 AI, 진짜 내가 될 수 있을까?" width="637" height="900" loading="lazy" /></a>
+          <div class="poster-body"><p class="poster-grade">3학년 · 도덕</p><h3>나를 닮은 AI, 진짜 내가 될 수 있을까?</h3><p class="poster-info">A0 인쇄용 · PDF · 5.1 MB</p>
+          <div class="resource-actions"><a class="resource-view" href="files/posters/grade-3-ai-self.pdf" target="_blank" rel="noopener">PDF 보기<span class="sr-only">: 나를 닮은 AI, 진짜 내가 될 수 있을까? (새 창)</span> ↗</a><a class="resource-download" href="files/posters/grade-3-ai-self.pdf" download="3학년_나를닮은AI_수업특성추가_A0_인쇄용.pdf">내려받기<span class="sr-only">: 나를 닮은 AI, 진짜 내가 될 수 있을까?</span></a></div></div>
+        </article>
+        <article class="poster-card">
+          <a class="poster-preview" href="files/posters/grade-5-tooth-fossil.pdf" target="_blank" rel="noopener" aria-label="5학년 · 과학: 이빨 화석의 주인은 누구일까? PDF 크게 보기 (새 창)"><img src="assets/library/grade-5-tooth-fossil.jpg" alt="5학년 · 과학 수업사례 포스터: 이빨 화석의 주인은 누구일까?" width="637" height="900" loading="lazy" /></a>
+          <div class="poster-body"><p class="poster-grade">5학년 · 과학</p><h3>이빨 화석의 주인은 누구일까?</h3><p class="poster-info">A0 인쇄용 · PDF · 1.7 MB</p>
+          <div class="resource-actions"><a class="resource-view" href="files/posters/grade-5-tooth-fossil.pdf" target="_blank" rel="noopener">PDF 보기<span class="sr-only">: 이빨 화석의 주인은 누구일까? (새 창)</span> ↗</a><a class="resource-download" href="files/posters/grade-5-tooth-fossil.pdf" download="5학년_미스터리이빨화석_수업특성추가_A0_인쇄용.pdf">내려받기<span class="sr-only">: 이빨 화석의 주인은 누구일까?</span></a></div></div>
+        </article>
+        <article class="poster-card">
+          <a class="poster-preview" href="files/posters/grade-6-science-solar-altitude.pdf" target="_blank" rel="noopener" aria-label="6학년 · 과학: 태양의 남중 고도가 높으면 왜 더 더워질까? PDF 크게 보기 (새 창)"><img src="assets/library/grade-6-science-solar-altitude.jpg" alt="6학년 · 과학 수업사례 포스터: 태양의 남중 고도가 높으면 왜 더 더워질까?" width="637" height="900" loading="lazy" /></a>
+          <div class="poster-body"><p class="poster-grade">6학년 · 과학</p><h3>태양의 남중 고도가 높으면 왜 더 더워질까?</h3><p class="poster-info">A0 인쇄용 · PDF · 1.8 MB</p>
+          <div class="resource-actions"><a class="resource-view" href="files/posters/grade-6-science-solar-altitude.pdf" target="_blank" rel="noopener">PDF 보기<span class="sr-only">: 태양의 남중 고도가 높으면 왜 더 더워질까? (새 창)</span> ↗</a><a class="resource-download" href="files/posters/grade-6-science-solar-altitude.pdf" download="6학년_과학_태양남중고도_수업특성추가_A0_인쇄용.pdf">내려받기<span class="sr-only">: 태양의 남중 고도가 높으면 왜 더 더워질까?</span></a></div></div>
+        </article>
+        <article class="poster-card">
+          <a class="poster-preview" href="files/posters/grade-6-math-gangjin-population.pdf" target="_blank" rel="noopener" aria-label="6학년 · 수학: 강진군 인구 문제 해결에 대한 아이디어 제시하기 PDF 크게 보기 (새 창)"><img src="assets/library/grade-6-math-gangjin-population.jpg" alt="6학년 · 수학 수업사례 포스터: 강진군 인구 문제 해결에 대한 아이디어 제시하기" width="637" height="900" loading="lazy" /></a>
+          <div class="poster-body"><p class="poster-grade">6학년 · 수학</p><h3>강진군 인구 문제 해결에 대한 아이디어 제시하기</h3><p class="poster-info">A0 인쇄용 · PDF · 3.0 MB</p>
+          <div class="resource-actions"><a class="resource-view" href="files/posters/grade-6-math-gangjin-population.pdf" target="_blank" rel="noopener">PDF 보기<span class="sr-only">: 강진군 인구 문제 해결에 대한 아이디어 제시하기 (새 창)</span> ↗</a><a class="resource-download" href="files/posters/grade-6-math-gangjin-population.pdf" download="6학년_수학_강진군인구문제_수업특성추가_A0_인쇄용.pdf">내려받기<span class="sr-only">: 강진군 인구 문제 해결에 대한 아이디어 제시하기</span></a></div></div>
+        </article>
+      </div>
     </div>
 
     <!-- 수업자료(외부 링크) -->
@@ -379,7 +432,7 @@
       <li><b>GitHub 저장소</b>에 로그인 후, 자료를 넣을 폴더로 이동합니다.<br />연구보고서 → <code>files/reports</code>, 각종 서식 → <code>files/forms</code></li>
       <li>오른쪽 위 <b>Add file → Upload files</b> 클릭</li>
       <li>파일을 드래그해 올리고 아래 <b>Commit changes</b> 클릭</li>
-      <li>각종 서식은 업로드 후 이 사이트를 새로고침하면 <b>자동으로 목록에 표시</b>됩니다. 연구보고서는 공개 준비가 끝난 뒤 안내합니다. 파일 이름이 곧 제목이 되니 알아보기 쉽게 지어주세요.</li>
+      <li>각종 서식은 업로드 후 이 사이트를 새로고침하면 <b>자동으로 목록에 표시</b>됩니다. 연구보고서는 <code>assets/config.js</code>의 <code>REPORT_FILES</code>에 등록합니다. 수업사례 포스터는 <code>files/posters</code>에 PDF를 올린 뒤 미리보기와 자료실 카드를 추가합니다. 파일 이름이 곧 제목이 되니 알아보기 쉽게 지어주세요.</li>
     </ol>
     <div class="note">💡 별도 로그인·업로드 화면이 없는 이유: 서버 없이 GitHub에 파일을 두는 방식이라 <b>무료이면서 사이트가 절대 멈추지 않습니다.</b> 삭제·이름변경도 GitHub에서 같은 방법으로 합니다.</div>
   </div>
@@ -452,7 +505,9 @@ async function loadResources(category) {
   if (category === "report" && CFG.REPORTS_READY !== true) return;
   let rows;
   try {
-    rows = DEMO ? DEMO_DATA[category] : await fetchFolder(CFG.FOLDERS[category]);
+    rows = category === "report" && Array.isArray(CFG.REPORT_FILES)
+      ? CFG.REPORT_FILES
+      : DEMO ? DEMO_DATA[category] : await fetchFolder(CFG.FOLDERS[category]);
   } catch (e) {
     listEl.innerHTML = `<div class="empty"><div class="big">⚠️</div>목록을 불러오지 못했습니다.<br/><small>${escapeHtml(e.message)} · 잠시 후 새로고침해 주세요.</small></div>`;
     return;
@@ -470,10 +525,14 @@ function renderList(el, rows, category) {
     <div class="file">
       <div class="fic">${extOf(r.name)}</div>
       <div class="meta">
-        <h4>${escapeHtml(titleOf(r.name))}</h4>
-        <p>${escapeHtml(extOf(r.name))}${r.size ? " · " + fmtSize(r.size) : ""}</p>
+        <h4>${escapeHtml(r.title || titleOf(r.name))}</h4>
+        ${r.description ? `<p>${escapeHtml(r.description)}</p>` : ""}
+        <p>${escapeHtml(extOf(r.name))}${r.pages ? " · " + r.pages + "쪽" : ""}${r.size ? " · " + fmtSize(r.size) : ""}</p>
       </div>
-      <a class="dl" href="${r.download_url}" ${DEMO ? "" : 'download target="_blank" rel="noopener"'}>내려받기</a>
+      <div class="resource-actions">
+        ${r.view_url ? `<a class="resource-view" href="${escapeHtml(r.view_url)}" target="_blank" rel="noopener">PDF 보기<span class="sr-only"> (새 창)</span> ↗</a>` : ""}
+        <a class="resource-download" href="${escapeHtml(r.download_url)}" ${DEMO ? "" : 'download target="_blank" rel="noopener"'}>내려받기</a>
+      </div>
     </div>`).join("");
 }
 
@@ -484,6 +543,7 @@ document.querySelectorAll(".overlay").forEach((o) => o.addEventListener("click",
 loadResources("report");
 loadResources("form");
 </script>
+
 
 
 
