@@ -168,6 +168,13 @@
   .poster-body h3 { color:var(--teal-900); font-size:1.05rem; line-height:1.5; word-break:keep-all; }
   .poster-info { color:var(--muted); font-size:.82rem; margin:10px 0 16px; }
   .poster-body .resource-actions { margin-top:auto; }
+  .summary-posters { margin-top:28px; padding-top:26px; border-top:1px solid var(--line); }
+  .summary-posters > h3 { color:var(--teal-900); font-size:1.15rem; margin-bottom:6px; }
+  .summary-posters .poster-intro { text-align:left; margin-bottom:16px; }
+  .poster-grid.summary { grid-template-columns:repeat(4,minmax(0,1fr)); }
+  .poster-grid.summary .poster-preview img { height:240px; }
+  @media(max-width:1000px) { .poster-grid.summary { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  @media(max-width:540px) { .poster-grid.summary { grid-template-columns:1fr; } }
   #library { scroll-margin-top:150px; }
   @media(max-width:860px) { .poster-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
   @media(max-width:540px) { .poster-grid { grid-template-columns:1fr; } .file { flex-wrap:wrap; padding:18px; } .file .resource-actions { width:100%; justify-content:flex-end; } #library { scroll-margin-top:230px; } }
@@ -358,6 +365,32 @@
     <!-- 연구보고서 -->
     <div class="panel active" id="reports">
       <div class="file-list" id="reportList"><div class="file"><div class="fic">PDF</div><div class="meta"><h4>2026. 연구학교 결과보고서</h4><p>하이터치-하이테크(HTHT) 수업 네비게이터를 통한 학생 주도성 기르기</p><p>PDF · 63쪽 · 3.5 MB</p></div><div class="resource-actions"><a class="resource-view" href="files/reports/research-report-2026-11-02.pdf" target="_blank" rel="noopener">PDF 보기<span class="sr-only"> (새 창)</span> ↗</a><a class="resource-download" href="files/reports/research-report-2026-11-02.pdf" download>내려받기</a></div></div></div>
+      <div class="summary-posters" id="summaryPosters">
+        <h3>연구 요약 포스터</h3>
+        <p class="poster-intro">연구보고서의 핵심을 네 장으로 정리한 A0 포스터입니다. 포스터를 누르면 PDF 원본을 새 창에서 크게 볼 수 있습니다.</p>
+        <div class="poster-grid summary">
+        <article class="poster-card">
+          <a class="poster-preview" href="files/reports/summary-01-overview.pdf" target="_blank" rel="noopener" aria-label="01 · 연구 개요: 하이터치-하이테크(HTHT) 수업 네비게이터를 통한 학습자 주도성 기르기 PDF 크게 보기 (새 창)"><img src="assets/library/summary-01-overview.jpg" alt="연구 요약 포스터 01 · 연구 개요: 하이터치-하이테크(HTHT) 수업 네비게이터를 통한 학습자 주도성 기르기" width="637" height="900" loading="lazy" /></a>
+          <div class="poster-body"><p class="poster-grade">01 · 연구 개요</p><h3>하이터치-하이테크(HTHT) 수업 네비게이터를 통한 학습자 주도성 기르기</h3><p class="poster-info">A0 인쇄용 · PDF · 39 KB</p>
+          <div class="resource-actions"><a class="resource-view" href="files/reports/summary-01-overview.pdf" target="_blank" rel="noopener">PDF 보기<span class="sr-only">: 하이터치-하이테크(HTHT) 수업 네비게이터를 통한 학습자 주도성 기르기 (새 창)</span> ↗</a><a class="resource-download" href="files/reports/summary-01-overview.pdf" download="01_연구학교_개요_A0_인쇄용.pdf">내려받기<span class="sr-only">: 하이터치-하이테크(HTHT) 수업 네비게이터를 통한 학습자 주도성 기르기</span></a></div></div>
+        </article>
+        <article class="poster-card">
+          <a class="poster-preview" href="files/reports/summary-02-htht-navigator.pdf" target="_blank" rel="noopener" aria-label="02 · 기반과 플랫폼: HTHT 수업 네비게이터, 교사의 설계를 돕고 수업 경험을 함께 쌓다 PDF 크게 보기 (새 창)"><img src="assets/library/summary-02-htht-navigator.jpg" alt="연구 요약 포스터 02 · 기반과 플랫폼: HTHT 수업 네비게이터, 교사의 설계를 돕고 수업 경험을 함께 쌓다" width="637" height="900" loading="lazy" /></a>
+          <div class="poster-body"><p class="poster-grade">02 · 기반과 플랫폼</p><h3>HTHT 수업 네비게이터, 교사의 설계를 돕고 수업 경험을 함께 쌓다</h3><p class="poster-info">A0 인쇄용 · PDF · 180 KB</p>
+          <div class="resource-actions"><a class="resource-view" href="files/reports/summary-02-htht-navigator.pdf" target="_blank" rel="noopener">PDF 보기<span class="sr-only">: HTHT 수업 네비게이터, 교사의 설계를 돕고 수업 경험을 함께 쌓다 (새 창)</span> ↗</a><a class="resource-download" href="files/reports/summary-02-htht-navigator.pdf" download="02_HTHT_수업네비게이터_A0_인쇄용.pdf">내려받기<span class="sr-only">: HTHT 수업 네비게이터, 교사의 설계를 돕고 수업 경험을 함께 쌓다</span></a></div></div>
+        </article>
+        <article class="poster-card">
+          <a class="poster-preview" href="files/reports/summary-03-navi-practice.pdf" target="_blank" rel="noopener" aria-label="03 · NAVI 수업 실천: 학생이 선택하고 돌아보는 NAVI 수업 실천 PDF 크게 보기 (새 창)"><img src="assets/library/summary-03-navi-practice.jpg" alt="연구 요약 포스터 03 · NAVI 수업 실천: 학생이 선택하고 돌아보는 NAVI 수업 실천" width="637" height="900" loading="lazy" /></a>
+          <div class="poster-body"><p class="poster-grade">03 · NAVI 수업 실천</p><h3>학생이 선택하고 돌아보는 NAVI 수업 실천</h3><p class="poster-info">A0 인쇄용 · PDF · 571 KB</p>
+          <div class="resource-actions"><a class="resource-view" href="files/reports/summary-03-navi-practice.pdf" target="_blank" rel="noopener">PDF 보기<span class="sr-only">: 학생이 선택하고 돌아보는 NAVI 수업 실천 (새 창)</span> ↗</a><a class="resource-download" href="files/reports/summary-03-navi-practice.pdf" download="03_NAVI_수업실천_A0_인쇄용.pdf">내려받기<span class="sr-only">: 학생이 선택하고 돌아보는 NAVI 수업 실천</span></a></div></div>
+        </article>
+        <article class="poster-card">
+          <a class="poster-preview" href="files/reports/summary-04-outcomes-next.pdf" target="_blank" rel="noopener" aria-label="04 · 운영 성과와 다음 과제: 수업 자산을 쌓고, 배움의 변화를 살피다 PDF 크게 보기 (새 창)"><img src="assets/library/summary-04-outcomes-next.jpg" alt="연구 요약 포스터 04 · 운영 성과와 다음 과제: 수업 자산을 쌓고, 배움의 변화를 살피다" width="637" height="900" loading="lazy" /></a>
+          <div class="poster-body"><p class="poster-grade">04 · 운영 성과와 다음 과제</p><h3>수업 자산을 쌓고, 배움의 변화를 살피다</h3><p class="poster-info">A0 인쇄용 · PDF · 43 KB</p>
+          <div class="resource-actions"><a class="resource-view" href="files/reports/summary-04-outcomes-next.pdf" target="_blank" rel="noopener">PDF 보기<span class="sr-only">: 수업 자산을 쌓고, 배움의 변화를 살피다 (새 창)</span> ↗</a><a class="resource-download" href="files/reports/summary-04-outcomes-next.pdf" download="04_운영성과와_다음과제_A0_인쇄용.pdf">내려받기<span class="sr-only">: 수업 자산을 쌓고, 배움의 변화를 살피다</span></a></div></div>
+        </article>
+        </div>
+      </div>
       <div class="help-hint"><button onclick="openModal('helpOverlay')">＋ 자료를 추가하려면?</button></div>
     </div>
 
@@ -442,7 +475,7 @@
       <li><b>GitHub 저장소</b>에 로그인 후, 자료를 넣을 폴더로 이동합니다.<br />연구보고서 → <code>files/reports</code>, 각종 서식(연구학교 성과물 탭) → <code>files/forms</code>, 네비게이터 매뉴얼 → <code>files/manual</code></li>
       <li>오른쪽 위 <b>Add file → Upload files</b> 클릭</li>
       <li>파일을 드래그해 올리고 아래 <b>Commit changes</b> 클릭</li>
-      <li>각종 서식은 업로드 후 이 사이트를 새로고침하면 <b>자동으로 목록에 표시</b>됩니다. 연구보고서는 <code>assets/config.js</code>의 <code>REPORT_FILES</code>에 등록합니다. 네비게이터 매뉴얼은 <code>files/manual</code>의 PDF를 새 파일로 바꿔 올리면 됩니다. 수업사례 포스터는 <code>files/posters</code>에 PDF를 올린 뒤 미리보기와 자료실 카드를 추가합니다. 파일 이름이 곧 제목이 되니 알아보기 쉽게 지어주세요.</li>
+      <li>각종 서식은 업로드 후 이 사이트를 새로고침하면 <b>자동으로 목록에 표시</b>됩니다. 연구보고서는 <code>assets/config.js</code>의 <code>REPORT_FILES</code>에 등록합니다. 연구 요약 포스터는 <code>files/reports</code>에 PDF를 올린 뒤 미리보기와 자료실 카드를 추가합니다. 네비게이터 매뉴얼은 <code>files/manual</code>의 PDF를 새 파일로 바꿔 올리면 됩니다. 수업사례 포스터는 <code>files/posters</code>에 PDF를 올린 뒤 미리보기와 자료실 카드를 추가합니다. 파일 이름이 곧 제목이 되니 알아보기 쉽게 지어주세요.</li>
     </ol>
     <div class="note">💡 별도 로그인·업로드 화면이 없는 이유: 서버 없이 GitHub에 파일을 두는 방식이라 <b>무료이면서 사이트가 절대 멈추지 않습니다.</b> 삭제·이름변경도 GitHub에서 같은 방법으로 합니다.</div>
   </div>
