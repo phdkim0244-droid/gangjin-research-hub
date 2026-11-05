@@ -21,6 +21,15 @@ window.APP_CONFIG = {
     "size": 3680923,
     "view_url": "files/reports/research-report-2026-11-02.pdf",
     "download_url": "files/reports/research-report-2026-11-02.pdf"
+  },
+  {
+    "name": "2026. AI·디지털 기반 교수·학습 혁신 연구학교 계획서(강진중앙초)_최종.pdf",
+    "title": "2026. 연구학교 계획서",
+    "description": "AI·디지털 기반 교육자료 활용 교수·학습 혁신 연구학교 운영 계획 · 2026. 4.",
+    "pages": 24,
+    "size": 7547241,
+    "view_url": "files/reports/research-plan-2026.pdf",
+    "download_url": "files/reports/research-plan-2026.pdf"
   }
 ],
   GITHUB_OWNER:  "phdkim0244-droid",   // 본인 GitHub 아이디
